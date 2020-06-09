@@ -1,0 +1,15 @@
+<resources>
+    
+    <string name="app_name">Конвертер валют</string>
+    <string name="title_home">Ручной ввод</string>
+    <string name="title_dashboard">Интернет курс</string>
+    <string name="title_notifications">Уведомления</string>
+    <string name="cost">Стоимость валюты</string>
+    <string name="sum">Сумма</string>
+    <string name="result">Результат</string>
+    <string name="convert">Конвертировать</string>
+    <string name="use_bank_fee">Учитывать комиссию банка</string>
+    <string name="fee">Комиссия</string>
+    <string name="not_less_then">%, но не менее чем</string>
+
+</resources>

@@ -18,5 +18,90 @@
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        tools:visibility="invisible" />
+
+    <Switch
+        android:id="@+id/Notify_value_change_swithch"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="25dp"
+        android:layout_marginEnd="25dp"
+        android:text="@string/notify_change"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent" />
+
+    <Switch
+        android:id="@+id/show_cost_switch"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="@string/show_cost"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/waring_text" />
+
+    <Spinner
+        android:id="@+id/select_value_for_notification_spinner"
+        android:layout_width="200dp"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="42dp"
+        app:layout_constraintBottom_toBottomOf="@+id/own_value"
+        app:layout_constraintStart_toEndOf="@+id/own_value"
+        app:layout_constraintTop_toTopOf="@+id/own_value" />
+
+    <Spinner
+        android:id="@+id/select_value_for_info_spinner"
+        android:layout_width="200dp"
+        android:layout_height="wrap_content"
+        app:layout_constraintBottom_toBottomOf="@+id/notify_value"
+        app:layout_constraintStart_toStartOf="@+id/select_own_value_for_notification_spinner"
+        app:layout_constraintTop_toTopOf="@+id/notify_value" />
+
+    <TextView
+        android:id="@+id/own_value"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="8dp"
+        android:text="@string/select_value_for_notification"
+        app:layout_constraintStart_toStartOf="@+id/Notify_value_change_swithch"
+        app:layout_constraintTop_toBottomOf="@+id/Notify_value_change_swithch" />
+
+    <TextView
+        android:id="@+id/notify_value"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="8dp"
+        android:text="@string/select_value_for_notification"
+        app:layout_constraintStart_toStartOf="@+id/show_cost_switch"
+        app:layout_constraintTop_toBottomOf="@+id/show_cost_switch" />
+
+    <Spinner
+        android:id="@+id/select_own_value_for_notification_spinner"
+        android:layout_width="200dp"
+        android:layout_height="wrap_content"
+        app:layout_constraintStart_toStartOf="@+id/select_value_for_notification_spinner"
+        app:layout_constraintTop_toTopOf="@+id/select_value_own_text" />
+
+    <TextView
+        android:id="@+id/select_value_own_text"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="10dp"
+        android:text="@string/own_value"
+        app:layout_constraintStart_toStartOf="@+id/own_value"
+        app:layout_constraintTop_toBottomOf="@+id/own_value" />
+
+    <TextView
+        android:id="@+id/waring_text"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="8dp"
+        android:text="@string/waring_text"
+        android:visibility="invisible"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/select_own_value_for_notification_spinner"
+        tools:visibility="visible" />
+
 </androidx.constraintlayout.widget.ConstraintLayout>

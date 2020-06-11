@@ -1,5 +1,5 @@
 <resources>
-    
+
     <string name="app_name">Конвертер валют</string>
     <string name="title_home">Ручной ввод</string>
     <string name="title_dashboard">Интернет курс</string>
@@ -11,5 +11,17 @@
     <string name="use_bank_fee">Учитывать комиссию банка</string>
     <string name="fee">Комиссия</string>
     <string name="not_less_then">%, но не менее чем</string>
+    <string name="notify_change">Уведомлять,при изменении более чем на 10%</string>
+    <string name="show_cost">Показывать стоимость валюты в уведомлениях</string>
+    <string name="own_value">Ваша родная валюта</string>
+    <string name="select_value_for_notification">Укажите валюту</string>
+    <string name="waring_text">Уведомления работаю только при включеном интернете, и при разрешении приложению их показывать!</string>
+
+
+    <string name="data_not_updated_today">Вы не обновляли курсы сегодня</string>
+    <string name="updating_process">Обновление...</string>
+    <string name="updated">Курс актуальный</string>
+    <string name="do_update">Обновить</string>
+
 
 </resources>

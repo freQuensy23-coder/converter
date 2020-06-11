@@ -12,7 +12,7 @@
         android:layout_height="wrap_content"
         android:layout_marginStart="16dp"
         android:layout_marginTop="28dp"
-        android:text="Стоимость валюты"
+        android:text="@string/cost"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent" />
 
@@ -22,7 +22,7 @@
         android:layout_height="wrap_content"
         android:layout_marginStart="16dp"
         android:layout_marginTop="60dp"
-        android:text="Результат"
+        android:text="@string/result"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/textView2" />
 
@@ -32,7 +32,7 @@
         android:layout_height="wrap_content"
         android:layout_marginStart="16dp"
         android:layout_marginTop="56dp"
-        android:text="Сумма"
+        android:text="@string/sum"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="@+id/firsValueCost_text" />
 
@@ -40,20 +40,21 @@
         android:id="@+id/do_convert_button"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_marginStart="240dp"
         android:layout_marginTop="36dp"
-        android:text="Конвертировать"
-        app:layout_constraintStart_toStartOf="parent"
+        android:layout_marginEnd="50dp"
+        android:text="@string/convert"
+        app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/sum_text" />
 
     <ImageButton
         android:id="@+id/do_replace_button"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_marginEnd="328dp"
+        android:layout_marginStart="50dp"
         android:src="@android:drawable/ic_popup_sync"
-        app:layout_constraintEnd_toEndOf="parent"
-        tools:layout_editor_absoluteY="218dp" />
+        app:layout_constraintBottom_toBottomOf="@+id/do_convert_button"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="@+id/do_convert_button" />
 
     <Switch
         android:id="@+id/comission_use_swich"
@@ -61,7 +62,7 @@
         android:layout_height="wrap_content"
         android:layout_marginStart="12dp"
         android:layout_marginTop="32dp"
-        android:text="Учитывать комиссию банка"
+        android:text="@string/use_bank_fee"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/do_convert_button" />
 
@@ -70,82 +71,89 @@
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_marginStart="12dp"
-        android:layout_marginTop="10dp"
-        android:text="Комиссия:"
+        android:layout_marginTop="16dp"
+        android:text="@string/fee"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/comission_use_swich" />
 
     <EditText
-        android:id="@+id/editText5"
+        android:id="@+id/comission_editText"
         android:layout_width="94dp"
-        android:layout_height="36dp"
-        android:layout_marginStart="70dp"
-        android:layout_marginEnd="63dp"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="2dp"
         android:ems="10"
         android:inputType="number"
+        android:text="@string/comision_default"
         app:layout_constraintBottom_toBottomOf="@+id/comission_text"
-        app:layout_constraintEnd_toEndOf="@+id/comission_use_swich"
-        app:layout_constraintHorizontal_bias="1.0"
-        app:layout_constraintStart_toStartOf="@+id/comission_text"
-        app:layout_constraintTop_toBottomOf="@id/comission_use_swich"
-        app:layout_constraintVertical_bias="0.0" />
+        app:layout_constraintStart_toEndOf="@+id/comission_text"
+        app:layout_constraintTop_toTopOf="@+id/comission_text" />
 
     <TextView
         android:id="@+id/not_less_then_text"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_marginStart="10dp"
-        android:layout_marginTop="10dp"
-        android:text="%, но не менее чем"
-        app:layout_constraintStart_toEndOf="@+id/editText5"
-        app:layout_constraintTop_toBottomOf="@+id/comission_use_swich" />
+        android:text="@string/not_less_then"
+        app:layout_constraintStart_toEndOf="@+id/comission_editText"
+        app:layout_constraintTop_toTopOf="@+id/comission_text" />
 
     <EditText
-        android:id="@+id/editText9"
+        android:id="@+id/not_less_editText"
         android:layout_width="0dp"
-        android:layout_height="36dp"
+        android:layout_height="wrap_content"
         android:layout_marginStart="3dp"
         android:layout_marginEnd="16dp"
         android:ems="10"
         android:inputType="number"
+        android:text="@string/not_less_default"
         app:layout_constraintBottom_toBottomOf="@+id/not_less_then_text"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toEndOf="@+id/not_less_then_text"
-        app:layout_constraintTop_toBottomOf="@id/comission_use_swich" />
+        app:layout_constraintTop_toTopOf="@+id/not_less_then_text" />
 
     <EditText
-        android:id="@+id/editText10"
+        android:id="@+id/cost_editText"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="15dp"
+        android:layout_marginBottom="10dp"
+        android:ems="10"
+        android:inputType="numberDecimal"
+        android:text="75.0"
+        app:layout_constraintBottom_toBottomOf="@+id/firsValueCost_text"
+        app:layout_constraintStart_toEndOf="@+id/firsValueCost_text"
+        app:layout_constraintTop_toTopOf="@+id/firsValueCost_text" />
+
+    <EditText
+        android:id="@+id/sum_editText"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:ems="10"
         android:inputType="numberDecimal"
-        tools:layout_editor_absoluteX="167dp"
-        tools:layout_editor_absoluteY="17dp" />
+        android:text="100"
+        app:layout_constraintBottom_toBottomOf="@+id/textView2"
+        app:layout_constraintStart_toStartOf="@+id/cost_editText"
+        app:layout_constraintTop_toTopOf="@+id/textView2" />
 
     <EditText
-        android:id="@+id/editText11"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:ems="10"
-        android:inputType="numberDecimal"
-        tools:layout_editor_absoluteX="167dp"
-        tools:layout_editor_absoluteY="80dp" />
-
-    <EditText
-        android:id="@+id/editText12"
+        android:id="@+id/result_editText"
         android:layout_width="153dp"
         android:layout_height="wrap_content"
         android:ems="10"
         android:inputType="numberDecimal"
-        tools:layout_editor_absoluteX="167dp"
-        tools:layout_editor_absoluteY="148dp" />
+        android:text="7500.0"
+        app:layout_constraintBottom_toBottomOf="@+id/sum_text"
+        app:layout_constraintStart_toStartOf="@+id/sum_editText"
+        app:layout_constraintTop_toTopOf="@+id/sum_text" />
 
     <ImageButton
-        android:id="@+id/copy_button"
+        android:id="@+id/do_copy_button"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
+        android:layout_marginStart="2dp"
         android:src="?attr/actionModeCopyDrawable"
-        tools:layout_editor_absoluteX="329dp"
-        tools:layout_editor_absoluteY="148dp" />
+        app:layout_constraintBottom_toBottomOf="@+id/result_editText"
+        app:layout_constraintStart_toEndOf="@+id/result_editText"
+        app:layout_constraintTop_toTopOf="@+id/result_editText" />
 
 </androidx.constraintlayout.widget.ConstraintLayout>

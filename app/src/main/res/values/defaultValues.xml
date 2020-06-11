@@ -1,0 +1,7 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+
+    <string name="comision_default">3</string>
+    <string name="not_less_default">5</string>
+
+</resources>

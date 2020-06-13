@@ -10,8 +10,8 @@
         android:id="@+id/firsValueCost_text"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_marginStart="16dp"
-        android:layout_marginTop="28dp"
+        android:layout_marginStart="@dimen/home_start_left_dimer"
+        android:layout_marginTop="@dimen/home_start_up_dimer"
         android:text="@string/cost"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent" />
@@ -80,7 +80,7 @@
         android:id="@+id/comission_editText"
         android:layout_width="94dp"
         android:layout_height="wrap_content"
-        android:layout_marginStart="2dp"
+        android:layout_marginStart="@dimen/text_space_dimer"
         android:ems="10"
         android:inputType="number"
         android:text="@string/comision_default"
@@ -101,7 +101,7 @@
         android:id="@+id/not_less_editText"
         android:layout_width="0dp"
         android:layout_height="wrap_content"
-        android:layout_marginStart="3dp"
+        android:layout_marginStart="@dimen/text_space_dimer"
         android:layout_marginEnd="16dp"
         android:ems="10"
         android:inputType="number"
@@ -155,5 +155,53 @@
         app:layout_constraintBottom_toBottomOf="@+id/result_editText"
         app:layout_constraintStart_toEndOf="@+id/result_editText"
         app:layout_constraintTop_toTopOf="@+id/result_editText" />
+
+    <Spinner
+        android:id="@+id/convert_from_spinner"
+        android:layout_width="@dimen/choice_value_spinner_horizontal_size"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="@dimen/text_space_dimer"
+        android:spinnerMode="dialog"
+        app:layout_constraintBottom_toBottomOf="@+id/convert_from_text"
+        app:layout_constraintStart_toEndOf="@+id/convert_from_text"
+        app:layout_constraintTop_toTopOf="@+id/convert_from_text" />
+
+    <Spinner
+        android:id="@+id/convert_to_spinner"
+        android:layout_width="@dimen/choice_value_spinner_horizontal_size"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="@dimen/text_space_dimer"
+        app:layout_constraintBottom_toBottomOf="@+id/textView4"
+        app:layout_constraintStart_toEndOf="@+id/textView4"
+        app:layout_constraintTop_toTopOf="@+id/textView4" />
+
+    <TextView
+        android:id="@+id/get_from_db_text"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="16dp"
+        android:text="@string/get_cost_from_db"
+        android:textStyle="bold"
+        app:layout_constraintStart_toStartOf="@+id/comission_text"
+        app:layout_constraintTop_toBottomOf="@+id/comission_editText" />
+
+    <TextView
+        android:id="@+id/convert_from_text"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="16dp"
+        android:text="@string/convert_from"
+        app:layout_constraintStart_toStartOf="@+id/get_from_db_text"
+        app:layout_constraintTop_toBottomOf="@+id/get_from_db_text" />
+
+    <TextView
+        android:id="@+id/textView4"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="@dimen/text_space_dimer"
+        android:text="@string/convert_to"
+        app:layout_constraintBottom_toBottomOf="@+id/convert_from_spinner"
+        app:layout_constraintStart_toEndOf="@+id/convert_from_spinner"
+        app:layout_constraintTop_toTopOf="@+id/convert_from_spinner" />
 
 </androidx.constraintlayout.widget.ConstraintLayout>

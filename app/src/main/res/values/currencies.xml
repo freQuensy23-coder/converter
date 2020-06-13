@@ -1,0 +1,15 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+<!--    Enter cost of each value * 100 in RUB-->
+    <integer name="USD">7500</integer>
+    <integer name="UAH">262</integer>
+    <integer name="GBD">8793</integer>
+    <integer name="EUR">7901</integer>
+    <integer name="BIT">65161255</integer>
+<!--    1 RUB costs 100/100 RUB-->
+    <integer name="RUB">100</integer>
+
+
+
+
+</resources>

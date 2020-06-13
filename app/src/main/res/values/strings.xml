@@ -1,16 +1,44 @@
 <resources>
-
+<!--    Main-->
     <string name="app_name">Конвертер валют</string>
     <string name="title_home">Ручной ввод</string>
     <string name="title_dashboard">Интернет курс</string>
     <string name="title_notifications">Уведомления</string>
+
+<!--    hand write-->
     <string name="cost">Стоимость валюты</string>
     <string name="sum">Сумма</string>
     <string name="result">Результат</string>
     <string name="convert">Конвертировать</string>
     <string name="use_bank_fee">Учитывать комиссию банка</string>
     <string name="fee">Комиссия</string>
+    <string name="get_cost_from_db">Выбрать курс из базы данных</string>
+    <string name="convert_from">Конвертировать из </string>
     <string name="not_less_then">%, но не менее чем</string>
+    <string name="convert_to"> в </string>
+
+
+
+<!--    val values : Array<String> = arrayOf("USD", "UAH", "GBD", "EUR", "BIT", "RUB")-->
+    <string-array name="values">
+        <item>USD</item>
+        <item>UAH</item>
+        <item>GBD</item>
+        <item>EUR</item>
+        <item>BIT</item>
+        <item>RUB</item>
+    </string-array>
+
+<!--    val USD : Float = 75.00.toFloat()-->
+<!--    val UAH : Float = 2.62.toFloat()-->
+<!--    val GBD : Float = 87.93.toFloat()-->
+<!--    val EUR : Float = 79.01.toFloat()-->
+<!--    val BIT : Float = 79.1.toFloat()-->
+<!--    val RUB : Float = 1.0.toFloat()-->
+
+
+
+<!--    Notification-->
     <string name="notify_change">Уведомлять,при изменении более чем на 10%</string>
     <string name="show_cost">Показывать стоимость валюты в уведомлениях</string>
     <string name="own_value">Ваша родная валюта</string>
@@ -18,10 +46,12 @@
     <string name="waring_text">Уведомления работаю только при включеном интернете, и при разрешении приложению их показывать!</string>
 
 
+<!--    Internet cousre-->
     <string name="data_not_updated_today">Вы не обновляли курсы сегодня</string>
     <string name="updating_process">Обновление...</string>
     <string name="updated">Курс актуальный</string>
     <string name="do_update">Обновить</string>
+
 
 
 </resources>

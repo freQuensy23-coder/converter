@@ -161,7 +161,7 @@
         android:layout_width="@dimen/choice_value_spinner_horizontal_size"
         android:layout_height="wrap_content"
         android:layout_marginStart="@dimen/text_space_dimer"
-        android:spinnerMode="dialog"
+        android:spinnerMode="dropdown"
         app:layout_constraintBottom_toBottomOf="@+id/convert_from_text"
         app:layout_constraintStart_toEndOf="@+id/convert_from_text"
         app:layout_constraintTop_toTopOf="@+id/convert_from_text" />

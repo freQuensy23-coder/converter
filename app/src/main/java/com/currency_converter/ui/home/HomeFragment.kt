@@ -16,6 +16,7 @@ import android.content.ClipboardManager
 import android.content.Context
 import android.text.Editable
 import android.text.TextWatcher
+import android.widget.AdapterView
 import android.widget.ArrayAdapter
 import android.widget.Spinner
 import androidx.core.content.ContextCompat.getSystemService
@@ -84,10 +85,11 @@ class HomeFragment : Fragment() {
         val UAH : Float = 2.62.toFloat()
         val GBD : Float = 87.93.toFloat()
         val EUR : Float = 79.01.toFloat()
-        val BIT : Float = 79000.1.toFloat()
+        val BIT : Float = 659000.1.toFloat()
         val RUB : Float = 1.0.toFloat()
         val costs : Array<Float>   = arrayOf( USD,   UAH,   GBD,   EUR,   BIT,   RUB)
         val values : Array<String> = arrayOf("USD", "UAH", "GBD", "EUR", "BIT", "RUB")
+
 
         try {
             convert_from_spinner.adapter =
@@ -179,6 +181,7 @@ class HomeFragment : Fragment() {
             Log.d("button", "replace_button_pressed")
 
             if (use_database_values) {
+                Log.d("values", "Converting using DB")
                 var tmp: Int = convert_from_spinner.selectedItemId.toInt()
                 Log.d("values", "tmp = ${tmp}")
                 convert_from_spinner.setSelection(convert_to_spinner.selectedItemId.toInt())
@@ -197,6 +200,7 @@ class HomeFragment : Fragment() {
             }
             else
             {
+                Log.d("values", "Converting using HAND WRITING")
                 try {
                     var cost: Float = cost_editText.text.toString().toFloat()
                     if (cost.toDouble() == 0.0) {
@@ -227,6 +231,42 @@ class HomeFragment : Fragment() {
         }
 
         do_copy_button.setOnClickListener{}
+
+        convert_from_spinner.onItemSelectedListener = object : AdapterView.OnItemSelectedListener {
+            override fun onNothingSelected(parent: AdapterView<*>?) {
+                TODO("Not yet implemented")
+            }
+
+            override fun onItemSelected(
+                parent: AdapterView<*>?,
+                view: View?,
+                position: Int,
+                id: Long
+            ) {
+                var pos2 = convert_to_spinner.selectedItemId.toInt()
+                cost_editText.setText((costs.get(pos2) / costs.get(position)).toString())
+                use_database_values = true
+            }
+        }
+
+        convert_to_spinner.onItemSelectedListener = object : AdapterView.OnItemSelectedListener {
+            override fun onNothingSelected(parent: AdapterView<*>?) {
+                TODO("Not yet implemented")
+            }
+
+            override fun onItemSelected(
+                parent: AdapterView<*>?,
+                view: View?,
+                position: Int,
+                id: Long
+            ) {
+                Log.d("values", "Use DB values = ${use_database_values}. Convert to spinner item selected")
+                var pos2 = convert_from_spinner.selectedItemId.toInt()
+                cost_editText.setText((costs.get(pos2) / costs.get(position)).toString())
+                use_database_values = true
+            }
+        }
+
     }
 }
 

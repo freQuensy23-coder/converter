@@ -75,7 +75,7 @@ class NotificationsFragment : Fragment() {
         select_value_for_info_spinner.setSelection(value_info_index)
 
 
-        show_cost_switch.setOnCheckedChangeListener() { _, isChecked ->
+        notify_value_change_swithch.setOnCheckedChangeListener() { _, isChecked ->
             try {
                 if (isChecked)
                     if (Build.VERSION.SDK_INT >= Build.VERSION_CODES.O) {
@@ -114,6 +114,8 @@ class NotificationsFragment : Fragment() {
             catch (e : Exception){
                 Log.d("Exception", "Exception in notification showing ${e}")}
         }
+        show_cost_switch.setOnCheckedChangeListener() { _, isChecked ->
+        show_msg("Log.d('values', 'Перевод show_cost в стотсояние ${isChecked}); show_msg('Пока недоступно", activity = activity, long = True)}
     }
 }
 

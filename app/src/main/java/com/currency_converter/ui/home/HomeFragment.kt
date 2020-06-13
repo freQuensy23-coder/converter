@@ -14,6 +14,7 @@ import com.currency_converter.R
 import kotlinx.android.synthetic.main.fragment_home.*
 import android.content.ClipboardManager
 import android.content.Context
+import android.content.pm.ActivityInfo
 import android.text.Editable
 import android.text.TextWatcher
 import android.widget.AdapterView
@@ -38,7 +39,17 @@ fun swap(b:Boolean):Boolean{
     else{return true}
 }
 
-
+fun get_cost():Array<Float>{
+    val USD : Float = 75.00.toFloat()
+    val UAH : Float = 2.62.toFloat()
+    val GBD : Float = 87.93.toFloat()
+    val EUR : Float = 79.01.toFloat()
+    val BIT : Float = 659000.1.toFloat()
+    val RUB : Float = 1.0.toFloat()
+    val values : Array<String> = arrayOf("USD", "UAH", "GBD", "EUR", "BIT", "RUB")
+    val costs : Array<Float>   = arrayOf( USD,   UAH,   GBD,   EUR,   BIT,   RUB)
+    return costs
+}
 
 class HomeFragment : Fragment() {
 
@@ -53,25 +64,17 @@ class HomeFragment : Fragment() {
             ViewModelProviders.of(this).get(HomeViewModel::class.java)
         val root = inflater.inflate(R.layout.fragment_home, container, false)
 
-
-
-
-
-
         return root
     }
 
-
     override fun onCreate(savedInstanceState: Bundle?) {
-        super.onCreate(savedInstanceState)
-
-
-
-
-    }
+        super.onCreate(savedInstanceState)    }
 
 
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
+
+//        setRequestedOrientation(ActivityInfo.SCREEN_ORIENTATION_LANDSCAPE);
+
         super.onViewCreated(view, savedInstanceState)
 
         var use_database_values : Boolean = true
@@ -81,13 +84,8 @@ class HomeFragment : Fragment() {
         var DB_value_2_index:Int = 5
 
         //Creating values arrays
-        val USD : Float = 75.00.toFloat()
-        val UAH : Float = 2.62.toFloat()
-        val GBD : Float = 87.93.toFloat()
-        val EUR : Float = 79.01.toFloat()
-        val BIT : Float = 659000.1.toFloat()
-        val RUB : Float = 1.0.toFloat()
-        val costs : Array<Float>   = arrayOf( USD,   UAH,   GBD,   EUR,   BIT,   RUB)
+
+        val costs  = get_cost()
         val values : Array<String> = arrayOf("USD", "UAH", "GBD", "EUR", "BIT", "RUB")
 
 
@@ -105,8 +103,6 @@ class HomeFragment : Fragment() {
         var not_less: Int = 10
 
         var comis_total: Float = 0.toFloat()
-
-
 
         result_editText.setEnabled(false);
         result_editText.setCursorVisible(false);
@@ -151,9 +147,9 @@ class HomeFragment : Fragment() {
                         not_less_editText.setText("0")
                     }
 
-                    comis_total = (comis_percent.toFloat() / 100 * sum)
+                    comis_total = ((comis_percent.toFloat() / 100) * sum * cost)
                     Log.d("number", "comis_total = ${comis_total}")
-                    if (comis_total < not_less * cost) {
+                    if (comis_total < not_less) {
                         Log.d("msg_info", "Comision is very low. Using not_less")
                         comis_total = not_less.toFloat()
                     }

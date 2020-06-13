@@ -13,9 +13,9 @@
     <string name="use_bank_fee">Учитывать комиссию банка</string>
     <string name="fee">Комиссия</string>
     <string name="get_cost_from_db">Выбрать курс из базы данных</string>
-    <string name="convert_from">Конвертировать из </string>
+    <string name="convert_from">Конвертировать в </string>
     <string name="not_less_then">%, но не менее чем</string>
-    <string name="convert_to"> в </string>
+    <string name="convert_to"> из </string>
 
 
 

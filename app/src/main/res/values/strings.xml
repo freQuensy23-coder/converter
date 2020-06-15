@@ -47,11 +47,12 @@
 
 
 <!--    Internet cousre-->
-    <string name="data_not_updated_today">Вы не обновляли курсы сегодня</string>
+    <string name="data_not_updated_today">Обновить базу курсов</string>
     <string name="updating_process">Обновление...</string>
     <string name="updated">Курс актуальный</string>
     <string name="do_update">Обновить</string>
-
+    <string name="no_connection">Ошибка! Нет подключения</string>
+    <string name="error">Произошла ошибка</string>
 
 
 </resources>

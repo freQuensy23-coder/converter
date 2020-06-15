@@ -65,6 +65,7 @@ fun get_cost():Array<Float>{
     return costs
 }
 
+
 class HomeFragment : Fragment() {
 
     private lateinit var homeViewModel: HomeViewModel
@@ -77,6 +78,7 @@ class HomeFragment : Fragment() {
         homeViewModel =
             ViewModelProviders.of(this).get(HomeViewModel::class.java)
         val root = inflater.inflate(R.layout.fragment_home, container, false)
+
 
         return root
     }
@@ -239,7 +241,11 @@ class HomeFragment : Fragment() {
         }
 
 
-        do_copy_button.setOnClickListener{}
+        do_copy_button.setOnClickListener{
+            result_editText.setEnabled(true);
+            val act : Activity? = activity
+            show_msg("Теперь вы можете скопировать результат", activity = act, long = true)
+        }
 
         convert_from_spinner.onItemSelectedListener = object : AdapterView.OnItemSelectedListener {
             override fun onNothingSelected(parent: AdapterView<*>?) {
@@ -275,7 +281,6 @@ class HomeFragment : Fragment() {
                 use_database_values = true
             }
         }
-
     }
 }
 

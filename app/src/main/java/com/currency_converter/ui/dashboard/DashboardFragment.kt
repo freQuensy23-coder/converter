@@ -1,5 +1,6 @@
 package com.currency_converter.ui.dashboard
 
+import android.app.Activity
 import android.os.Bundle
 import android.provider.ContactsContract.CommonDataKinds.Website.URL
 import android.util.Log
@@ -11,6 +12,7 @@ import androidx.fragment.app.Fragment
 import androidx.lifecycle.Observer
 import androidx.lifecycle.ViewModelProviders
 import com.currency_converter.R
+import com.currency_converter.ui.home.show_msg
 import kotlinx.android.synthetic.main.fragment_dashboard.*
 import org.jsoup.Jsoup
 
@@ -56,6 +58,9 @@ class DashboardFragment : Fragment() {
 
         do_update_button.setOnClickListener{
 //            get_data()
+
+            val act : Activity? = activity
+            show_msg("Пока недоступно", long = false, activity = act)
         }
     }
 
